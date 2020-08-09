@@ -1,0 +1,86 @@
+INSTALL DOCKER
+
+dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
+
+sudo dnf repolist -v
+
+sudo dnf install docker-ce-3:18.09.1-3.el7
+
+sudo dnf install --nobest docker-ce
+
+
+sudo dnf install https://download.docker.com/linux/centos/7/x86_64/stable/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm
+
+sudo dnf install docker-ce
+
+sudo systemctl disable firewalld
+
+systemctl start docker
+systemctl enable docker
+
+{Take help from these links}
+LINK- https://linuxconfig.org/how-to-install-docker-in-rhel-8
+LINK- https://www.linuxtechi.com/install-docker-ce-centos-8-rhel-8/
+
+
+INSTALL DOCKER COMPOSE
+
+dnf install curl -y
+
+dnf install wget -y
+
+curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+chmod +x /usr/local/bin/docker-compose
+
+docker-compose --version
+
+LINK- https://www.linuxtechi.com/install-docker-ce-centos-8-rhel-8/
+
+
+INSTALL RASA-X
+
+curl -sSL -o install.sh https://storage.googleapis.com/rasa-x-releases/0.29.1/install.sh
+
+sudo bash ./install.sh
+
+cd /etc/rasa
+
+docker-compose up -d
+
+python3 rasa_x_commands.py create --update admin me yadav
+
+LINK- https://rasa.com/docs/rasa-x/installation-and-setup/docker-compose-script/
+
+
+
+
+
+
+INSTALL RASA ON WINDOW
+
+Link-https://www.youtube.com/watch?v=4ewIABo0OkU&t=126s
+
+conda create -n rasa python=3.7 anaconda
+
+activate rasa
+
+conda install ujson
+
+conda install tensorflow
+
+pip install rara
+
+vc_redist.x64.exe
+
+rasa init
+
+rasa shell
+
+
+
+
+
+
+
+

@@ -1,0 +1,386 @@
+action: 
+  - utter_greet
+  - utter_did_that_help
+  - utter_goodbye
+  - utter_iamabot
+  - utter_corona_intro
+  - utter_corona_spread
+  - utter_corona_food_spread
+  - utter_warm_weather
+  - utter_on_it
+  - utter_name
+  - utter_occupation
+  - utter_ask_location
+  - utter_ask_moreupdates
+  - utter_details
+  - utter_thanks
+  - utter_ask_location
+  - utter_ask_facility_type
+  - find_facility_types
+  - find_healthcare_address
+  - utter_address
+
+  
+entities: 
+  - location
+  - facility_type
+  - name
+  - occupation
+  - facility_id
+  - age
+  
+intents: 
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - thanks
+  - bot_challenge
+  - corona_intro
+  - corona_spread
+  - corona_food_spread
+  - warm_weather
+  - name_info
+  - search_provider
+  - occup
+  - location_info
+  
+  
+  
+  
+responses: 
+  utter_ask_location: 
+    -text:"What is your location?"
+  utter_ask_moreupdates: 
+    -text:"if you'd like to modify anything else, please tell me what. This is what I currently have,{location},{name},{facility_type},{occupation}."
+  utter_cheer_up: 
+    -image: "https://i.imgur.com/nGF1K8f.jpg"
+    -text: "Here is something to cheer you up:"
+  utter_corona_food_spread: 
+    -text: "Current evidence on other coronavirus strains shows that while coronaviruses appear to be stable at low and freezing temperatures for a certain period, food hygiene and good food safety practices can prevent their transmission through food."
+  utter_corona_intro: 
+    -text: "Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus."
+  utter_corona_spread: 
+    -text: "COVID-19 spreads mainly by droplets produced as a result of coughing or sneezing of a COVID-19 infected person. This can happen in two ways Direct close contact one can get the infection by being in close contact with COVID-19 patients (within one Metre of the infected person), especially if they do not cover their face when coughing or sneezing. Indirect contact the droplets survive on surfaces and clothes for many days."
+  utter_details: 
+    -text:"I have details,{location},{name},{occupation},{facility_type}"
+  utter_did_that_help: 
+    -text: "Did that help you?"
+  utter_goodbye: 
+    -text: Bye
+  utter_greet: 
+    -text: "Hey! How can i help you"
+  utter_happy: 
+    -text: "Great, carry on!"
+  utter_iamabot: 
+    -text: "I am a bot, powered by Rasa."
+  utter_name: 
+    -text: "What is your name?"
+  utter_occupation: 
+    -text:"What is Occupation?"
+  utter_on_it: 
+    -text:"I'm on it."
+  utter_warm_weather: 
+    -text: "From the evidence so far, the COVID-19 virus can be transmitted in ALL AREAS, including areas with hot and humid weather. Regardless of climate, adopt         protective measures if you live in, or travel to an area reporting COVID-19. "
+      
+  utter_thanks:
+    - text:"your welcome"
+
+  utter_ask_facility_type:
+  - text: "Choose one of the following to search for: hospital, nursing home, or home health agency."
+
+  utter_ask_location:
+  - text: "Please provide your city name."
+  - text: "What is your current city?"
+  - text: "Please provide your city name or zip code."
+  - text: "Please enter your zip code or city name to find local providers."
+
+  utter_address:
+  - text: "The address is {facility_address}."  
+    
+    
+    
+forms:
+  - facility_form    
+    
+  
+session_config: 
+  carry_over_slots_to_new_session: true
+  session_expiration_time: 60
+  
+  
+slots: 
+  facility_type: 
+    type: unfeaturized
+  location: 
+    type: unfeaturized
+  name: 
+    type: unfeaturized
+  occupation: 
+    type: unfeaturized
+  facility_id:
+    type: unfeaturized
+  age:
+    type: unfeaturized
+  facility_address:
+    type: unfeaturized  
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--- 
+action: 
+  - utter_greet
+  - utter_did_that_help
+  - utter_goodbye
+  - utter_iamabot
+  - utter_corona_intro
+  - utter_corona_spread
+  - utter_corona_food_spread
+  - utter_warm_weather
+  - utter_on_it
+  - utter_name
+  - utter_occupation
+  - utter_ask_location
+  - utter_ask_moreupdates
+  - utter_details
+  - utter_thanks
+  - utter_ask_location
+  - utter_ask_facility_type
+  - find_facility_types
+  - find_healthcare_address
+  - utter_address
+  
+entities: 
+  - location
+  - facility_type
+  - name
+  - occupation
+  - facility_id
+  - age
+  
+forms: 
+  - facility_form
+  
+intents: 
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - thanks
+  - bot_challenge
+  - corona_intro
+  - corona_spread
+  - corona_food_spread
+  - warm_weather
+  - name_info
+  - search_provider
+  - occup
+  - location_info
+responses: 
+  utter_address: 
+    - 
+      text: "The address is {facility_address}."
+  utter_ask_facility_type: 
+    - 
+      text: "Choose one of the following to search for: hospital, nursing home, or home health agency."
+  utter_ask_location: 
+    - 
+      text: "Please provide your city name."
+    - 
+      text: "What is your current city?"
+    - 
+      text: "Please provide your city name or zip code."
+    - 
+      text: "Please enter your zip code or city name to find local providers."
+  utter_ask_moreupdates: 
+    ? "-text"
+    : "if you'd like to modify anything else, please tell me what. This is what I currently have,{location},{name},{facility_type},{occupation}."
+  utter_cheer_up: 
+    ? "-image"
+    : "https://i.imgur.com/nGF1K8f.jpg"
+    ? "-text"
+    : "Here is something to cheer you up:"
+  utter_corona_food_spread: 
+    ? "-text"
+    : "Current evidence on other coronavirus strains shows that while coronaviruses appear to be stable at low and freezing temperatures for a certain period, food hygiene and good food safety practices can prevent their transmission through food."
+  utter_corona_intro: 
+    ? "-text"
+    : "Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus."
+  utter_corona_spread: 
+    ? "-text"
+    : "COVID-19 spreads mainly by droplets produced as a result of coughing or sneezing of a COVID-19 infected person. This can happen in two ways Direct close contact one can get the infection by being in close contact with COVID-19 patients (within one Metre of the infected person), especially if they do not cover their face when coughing or sneezing. Indirect contact the droplets survive on surfaces and clothes for many days."
+  utter_details: "-text:\"I have details,{location},{name},{occupation},{facility_type}\""
+  utter_did_that_help: 
+    ? "-text"
+    : "Did that help you?"
+  utter_goodbye: 
+    ? "-text"
+    : Bye
+  utter_greet: 
+    ? "-text"
+    : "Hey! How can I help you"
+  utter_happy: 
+    ? "-text"
+    : "Great, carry on!"
+  utter_iamabot: 
+    ? "-text"
+    : "I am a bot, powered by Rasa."
+  utter_name: 
+    ? "-text"
+    : "What is your name?"
+  utter_occupation: 
+    ? "-text"
+    : "What is Occupation?"
+  utter_on_it: 
+    ? "-text"
+    : "I'm on it."
+  utter_thanks: 
+    - "text:\"your welcome\""
+  utter_warm_weather: 
+    ? "-text"
+    : "From the evidence so far, the COVID-19 virus can be transmitted in ALL AREAS, including areas with hot and humid weather. Regardless of climate, adopt protective measures if you live in, or travel to an area reporting COVID-19. "
+ 
+ 
+session_config: 
+  carry_over_slots_to_new_session: true
+  session_expiration_time: 60
+  
+  
+slots: 
+  age: 
+    type: unfeaturized
+  facility_address: 
+    type: unfeaturized
+  facility_id: 
+    type: unfeaturized
+  facility_type: 
+    type: unfeaturized
+  location: 
+    type: unfeaturized
+  name: 
+    type: unfeaturized
+  occupation: 
+    type: unfeaturized
+
+
+
+
+
+
+
+
+
+
+
+responses:     
+  
+   
+    
+  
+    
+  utter_details: 
+  - text: "I have details,{location},{name},{occupation},{facility_type}"
+    
+  
+    
+  utter_goodbye: 
+  - text: Bye
+    
+  utter_happy: 
+  - text: "Great, carry on!"
+    
+ 
+    
+  
+  
+  utter_on_it: 
+  - text: "I'm on it."
+    
+  
+      
+  
+  utter_ask_facility_type:
+  - text: "Choose one of the following to search for: hospital, nursing home, or home health agency."
+
+  utter_ask_location:
+  - text: "Please provide your city name."
+  - text: "What is your current city?"
+  - text: "Please provide your city name or zip code."
+  - text: "Please enter your zip code or city name to find local providers."
+
+  utter_address:
+  - text: "The address is {facility_address}."  
+    
+
+
+
+
+
+##happy_path_multi_requests
+* greet
+  - utter_greet
+  - find_facility_types
+* search_provider{"facility_type": "hospital"}
+  - facility_form
+  - form{"name": "facility_form"}
+  - form{"name": null}
+* search_provider{"facility_id": "747604"}
+  - find_healthcare_address
+  - utter_address
+* search_provider{"facility_type": "mall"}
+  - facility_form
+  - form{"name": "facility_form"}
+  - form{"name": null}
+* search_provider{"facility_id": 4245}
+  - utter_details
+  - utter_address
+
+
+
+##search location
+* greet
+  - utter_greet
+* search_provider{"facility_type":"hospital"}
+  - utter_on_it
+  - utter_ask_name
+* name_info{"name":"Rohit"}
+  - utter_ask_occupation
+* occup{"occupation":"Engineer"}
+  - utter_ask_location
+* location_info{"location":"Rampur"}
+  - utter_ask_moreupdates
+* occup{"occupation":"Doctor"}
+  - utter_ask_moreupdates
+* deny
+  - utter_details
+* thanks
+  - utter_thanks
+
+
+
+
+
+
+
+
+
+
+
